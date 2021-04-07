@@ -263,16 +263,16 @@ const BotScript = (scenery, myMove) => {
       if (camposVazios == 5 && scenery[0] == scenery[4] && scenery [0] != '' && scenery[8] == ''){
         return moveIndex = 8
       }
-      if (camposVazios == 5 && scenery[1] != scenery[4] && scenery[1] != '' && scenery[6] == ''){
+      if (camposVazios == 5 && scenery[1] != scenery[4] && scenery[1] != '' && scenery[4] != '' && scenery[6] == ''){
         return moveIndex = 6
       }
-      if (camposVazios == 5 && scenery[3] != scenery[4]  && scenery[3] != '' && scenery[2] == ''){
+      if (camposVazios == 5 && scenery[3] != scenery[4]  && scenery[3] != '' && scenery[4] != '' && scenery[2] == ''){
         return moveIndex = 2
       }
-      if (camposVazios == 5 && scenery[5] != scenery[4]  && scenery[5] != '' && scenery[2] == ''){
+      if (camposVazios == 5 && scenery[5] != scenery[4]  && scenery[5] != '' && scenery[4] != '' && scenery[2] == ''){
         return moveIndex = 2
       }
-      if (camposVazios == 5 && scenery[7] != scenery[4]  && scenery[7] != '' && scenery[6] == ''){
+      if (camposVazios == 5 && scenery[7] != scenery[4]  && scenery[7] != '' && scenery[4] != '' && scenery[6] == ''){
         return moveIndex = 6
       }
       if(camposVazios == 3 && scenery [0] == scenery [6] && scenery [0] != '' && scenery [3] == ''){
@@ -281,7 +281,7 @@ const BotScript = (scenery, myMove) => {
       if(camposVazios == 3 && scenery [0] == scenery [2] && scenery [0] != '' && scenery [1] == ''){
         return moveIndex = 1
       }
-      if(camposVazios == 3 && scenery [6] == scenery [4] && scenery [2] != '' && scenery [3] == ''){
+      if(camposVazios == 3 && scenery [6] == scenery [4] && scenery [6] != '' && scenery [3] == ''){
         return moveIndex = 3
       }
       if(camposVazios == 1 && scenery [0] == '' && scenery[1] != '' && scenery[2] != '' && scenery[3] != '' && scenery[4] != '' && scenery[5] !='' && scenery[6] != '' && scenery[7] != '' && scenery[8] != ''){
@@ -311,6 +311,13 @@ const BotScript = (scenery, myMove) => {
       if(camposVazios == 1 && scenery [8] == ''  && scenery[1] != '' && scenery[2] != '' && scenery[3] != '' && scenery[4] != '' && scenery[5] !='' && scenery[6] != '' && scenery[7] != '' && scenery[0] != ''){
         return moveIndex = 8
       }
+    }
+    if(moveIndex != Number){
+      const randomNumber = Math.floor(Math.random() * 9)
+    
+      if (scenery[randomNumber]) return move()
+  
+      moveIndex = randomNumber
     }
   }
 
